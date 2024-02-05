@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Script.js" defer></script>
+  </head>
+  <body>
+    <script>
+    function addHeader() {
+    const button = document.getElementById('addButton');
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Новый заголовок, данный элемент нужно расположить после кнопки';
+    button.parentNode.insertBefore(h1, button.nextSibling); // Можно добавлять через append
+    }
+    
+    function removeHeader() {
+    const h1 = document.querySelector('h1');
+    if (h1) {
+    h1.parentNode.removeChild(h1);
+    }
+    }
+    
+    function hoverButton() {
+    console.log('Вы навели на данную кнопку');
+    }
+    
+    function unhoverButton() {
+    console.log('Наведения на кнопку больше нет');
+    }
+    </script>
+    </head>
+    <body>
+    <!--
+    Создать кнопку, которая добавляет заголовок h1 с текстом, “Новый заголовок, данный элемент нужно расположить после кнопки
+    Создать вторую кнопку, которая будет удалять созданный заголовок h1
+    Создать третью кнопку, при наведении на которую в консоль будет выводиться текст “вы навели на данную кнопку” , как только вы убираем курсор мыши с кнопки, в консоли должен появиться текст “Наведения на кнопку больше нет”
+    -->
+    <button id="addButton" onclick="addHeader()">Добавить заголовок</button>
+    <button onclick="removeHeader()">Удалить заголовок</button>
+    <button onmouseover="hoverButton()" onmouseout="unhoverButton()">Наведи на меня</button>
+    </body>
+    </html>
+    <script></script>
+  </body>
+</html>
